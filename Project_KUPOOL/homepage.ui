@@ -1,0 +1,1373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>homepage</class>
+ <widget class="QDialog" name="homepage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1660</width>
+    <height>1365</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QFrame" name="frame_3">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>690</y>
+     <width>1081</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#frame_3 {
+	background-color: #ebedee;
+}
+
+#buyer_or_seller_drop_menu, #sort_by_drop_menu, #filter_by_drop_menu, #order_by_drop_menu, #filter_condn_drop_menu{
+	border-radius: 8px;
+	background-color: #fff;
+	font-size: 17px;
+	color: #374957;
+}
+
+/*#sort_by_drop_menu:hover, #filter_by_drop_menu:hover, #order_by_drop_menu:hover, #filter_condn_drop_menu:hover{
+	border-radius: 5px;
+	background-color: #E3E8F0;
+}*/
+
+#no_sort_filter_btn, #apply_filter_btn, #apply_sort_btn{
+	background-color: transparent;
+	color: #374957;
+	font-size: 17px;
+}
+
+#view_button, #export_csv_btn{
+	border-radius: 8px;
+	font-weight: bold;
+	font-size: 17px;
+	color: #fff;
+	padding: 8px;
+	background-color: #32D736;
+}
+
+#view_button:hover, #export_csv_btn:hover {
+	background-color: #34E038;
+	background:transparent;
+
+}
+
+QScrollBar::handle:vertical {
+        background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+        stop: 0 rgb(32, 47, 130), stop: 0.5 rgb(32, 47, 130), stop:1 rgb(32, 47, 130));
+        min-height: 0px;
+}
+
+QScrollBar::add-line:vertical {
+       background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop: 0 rgb(32, 47, 130), stop: 0.5 rgb(32, 47, 130),  stop:1 rgb(32, 47, 130));
+        height: 0px;
+        subcontrol-position: bottom;
+       subcontrol-origin: margin;
+    }
+
+QScrollBar::sub-line:vertical {
+       background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop: 0  rgb(32, 47, 130), stop: 0.5 rgb(32, 47, 130),  stop:1 rgb(32, 47, 130));
+        height: 0px;
+        subcontrol-position: top;
+        subcontrol-origin: margin;
+    }</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QRadioButton" name="no_sort_filter_btn">
+    <property name="geometry">
+     <rect>
+      <x>155</x>
+      <y>30</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+      <pointsize>-1</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>Select me to view/export without applying any condition.</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>DEDUCTION</string>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="export_csv_btn">
+    <property name="geometry">
+     <rect>
+      <x>910</x>
+      <y>30</y>
+      <width>106</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string>Exports records as a CSV file to the desktop.</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#export_csv_btn{
+	border: 2px solid #f77062;
+	border-radius: 8px;
+	background-color: transparent;
+	color: #f77062;
+}
+
+#export_csv_btn:hover{
+	background-color: #f77062;
+	color: white;
+}</string>
+    </property>
+    <property name="text">
+     <string>BUY</string>
+    </property>
+    <property name="shortcut">
+     <string>Ctrl+E</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="apply_sort_btn">
+    <property name="geometry">
+     <rect>
+      <x>24</x>
+      <y>30</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+      <pointsize>-1</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>Select me to view/export with sorted records.</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>ADDITION</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="view_button">
+    <property name="geometry">
+     <rect>
+      <x>800</x>
+      <y>30</y>
+      <width>97</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string>Displays transaction records.</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+#view_button{
+	border: 2px solid  #88B2CC;
+	border-radius: 8px;
+	background-color: #88B2CC;
+	font-weight: bold;
+	font-size: 17px;
+	color: #fff;
+	padding: 8px;
+}
+
+#view_button:hover{
+	background-color: #96c4e0;
+	border-color: #96c4e0;
+}</string>
+    </property>
+    <property name="text">
+     <string>N/A</string>
+    </property>
+    <property name="shortcut">
+     <string>Ctrl+V</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="Quantity">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>30</y>
+      <width>81</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">spinbox{
+	background-color:white;
+}</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>1</y>
+     <width>401</width>
+     <height>841</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#frame{
+	background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgb(0, 92, 151), stop:1 rgb(54, 55, 149));
+	border-radius: 0;
+}
+
+#transaction_ID, #date_input, #name_input, #address_input, #phone_input, #amount1_input, #amount2_input, #amount3_input, #remarks_input{
+	border-radius: 0;
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+	border: 1px solid #fff;
+	padding:5px;
+	background-color: #fff;
+	font-size: 17px;
+	color: #374957;
+}
+
+#transaction_ID:focus, #date_input:focus, #name_input:focus, #address_input:focus, #phone_input:focus, #amount1_input:focus, #amount2_input:focus, #amount3_input:focus, #remarks_input:focus{
+	background-color: #E3E8F0;
+}
+
+#select_buyer_btn, #select_seller_btn{
+	color: #fff;
+	font-size: 17px;
+}
+
+#save_button, #calculate_net_amount_btn{
+	border-radius: 8px;
+	font-weight: bold;
+	background-color: #32D736;
+	font-size: 17px;
+	color: #fff;
+	padding: 8px;
+}
+
+#calculate_net_amount_btn{
+	border-top-left-radius: none;
+	border-bottom-left-radius: none;
+}
+
+#save_button:hover, #calculate_net_amount_btn:hover {
+	background-color: #34E038;
+}
+
+#update_button{
+	border: 2px solid  #88B2CC;
+	border-radius: 8px;
+	background-color: #88B2CC;
+	font-weight: bold;
+	font-size: 17px;
+	color: #fff;
+	padding: 8px;
+}
+
+#update_button:hover{
+	background-color: #96c4e0;
+	border-color: #96c4e0;
+}
+
+#delete_button{
+	border: 2px solid #f77062;
+	border-radius: 8px;
+	background-color: transparent;
+	font-weight: bold;
+	font-size: 17px;
+	color: #f77062;
+	padding: 8px;
+}
+
+#delete_button:hover{
+	background-color: #f77062;
+	color: #fff;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="phone_icon">
+    <property name="geometry">
+     <rect>
+      <x>37</x>
+      <y>390</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #fff;
+border-top-left-radius: 8px;
+border-bottom-left-radius: 8px;
+qproperty-alignment: AlignCenter;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="remarks_icon">
+    <property name="geometry">
+     <rect>
+      <x>37</x>
+      <y>580</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #fff;
+border-top-left-radius: 8px;
+border-bottom-left-radius: 8px;
+qproperty-alignment: AlignCenter;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="save_button">
+    <property name="geometry">
+     <rect>
+      <x>37</x>
+      <y>640</y>
+      <width>93</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string>Click here to save the record.</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>  Save</string>
+    </property>
+    <property name="shortcut">
+     <string>Ctrl+S</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="net_amount_icon">
+    <property name="geometry">
+     <rect>
+      <x>37</x>
+      <y>490</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #fff;
+border-top-left-radius: 8px;
+border-bottom-left-radius: 8px;
+qproperty-alignment: AlignCenter;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="quantity_icon">
+    <property name="geometry">
+     <rect>
+      <x>37</x>
+      <y>270</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #fff;
+border-top-left-radius: 8px;
+border-bottom-left-radius: 8px;
+qproperty-alignment: AlignCenter;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="amount3_input">
+    <property name="geometry">
+     <rect>
+      <x>78</x>
+      <y>490</y>
+      <width>196</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+      <pointsize>-1</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 0;
+
+</string>
+    </property>
+    <property name="placeholderText">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="remarks_input">
+    <property name="geometry">
+     <rect>
+      <x>77</x>
+      <y>580</y>
+      <width>287</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+      <pointsize>-1</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>Enter remarks.</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="placeholderText">
+     <string>Remarks</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="transaction_amounts">
+    <property name="geometry">
+     <rect>
+      <x>37</x>
+      <y>450</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 17px;
+font-weight: bold;
+color: #fff;
+background-color: transparent;</string>
+    </property>
+    <property name="text">
+     <string>Transaction Amounts</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="username_display">
+    <property name="geometry">
+     <rect>
+      <x>177</x>
+      <y>17</y>
+      <width>211</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 30px;
+font-weight: bold;
+padding: 5px 5px 5px 0;
+color: #fff;
+background-color: transparent;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="transaction_ID">
+    <property name="geometry">
+     <rect>
+      <x>77</x>
+      <y>107</y>
+      <width>287</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+      <pointsize>-1</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>Transaction ID must be a positive integer.</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="placeholderText">
+     <string>Name</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="name_icon_2">
+    <property name="geometry">
+     <rect>
+      <x>37</x>
+      <y>107</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #fff;
+border-top-left-radius: 8px;
+border-bottom-left-radius: 8px;
+qproperty-alignment: AlignCenter;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="phone_input">
+    <property name="geometry">
+     <rect>
+      <x>77</x>
+      <y>390</y>
+      <width>287</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+      <pointsize>-1</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>Phone number of buyer/seller.</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="placeholderText">
+     <string>98XXXXXXXX</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="date_input">
+    <property name="geometry">
+     <rect>
+      <x>77</x>
+      <y>167</y>
+      <width>287</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+      <pointsize>-1</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>Date of transaction.</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="placeholderText">
+     <string>Department</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="calculate_net_amount_btn">
+    <property name="geometry">
+     <rect>
+      <x>273</x>
+      <y>490</y>
+      <width>91</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string>Click here to calculate net amount.</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>Calculate</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="delete_button">
+    <property name="geometry">
+     <rect>
+      <x>259</x>
+      <y>640</y>
+      <width>105</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string>Click here to delete the record.</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>  Delete</string>
+    </property>
+    <property name="shortcut">
+     <string>Ctrl+D</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="address_icon">
+    <property name="geometry">
+     <rect>
+      <x>37</x>
+      <y>330</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #fff;
+border-top-left-radius: 8px;
+border-bottom-left-radius: 8px;
+qproperty-alignment: AlignCenter;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="general_info">
+    <property name="geometry">
+     <rect>
+      <x>37</x>
+      <y>67</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 27px;
+font-weight: bold;
+color: GOLD;
+background-color: transparent;</string>
+    </property>
+    <property name="text">
+     <string>KUPOOL</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="address_input">
+    <property name="geometry">
+     <rect>
+      <x>77</x>
+      <y>330</y>
+      <width>287</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+      <pointsize>-1</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>Address of buyer/seller.</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="placeholderText">
+     <string>Address</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="name_input">
+    <property name="geometry">
+     <rect>
+      <x>77</x>
+      <y>270</y>
+      <width>287</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+      <pointsize>-1</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>Name of buyer/seller.</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="placeholderText">
+     <string>QUANTITY</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="other">
+    <property name="geometry">
+     <rect>
+      <x>37</x>
+      <y>540</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 17px;
+font-weight: bold;
+color: #fff;
+background-color: transparent;</string>
+    </property>
+    <property name="text">
+     <string>Other</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="department_icon">
+    <property name="geometry">
+     <rect>
+      <x>37</x>
+      <y>167</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #fff;
+border-top-left-radius: 8px;
+border-bottom-left-radius: 8px;
+qproperty-alignment: AlignCenter;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="welcome_message">
+    <property name="geometry">
+     <rect>
+      <x>37</x>
+      <y>17</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 33px;
+font-weight: BOLD;
+color: GOLD;
+
+background-color: transparent;</string>
+    </property>
+    <property name="text">
+     <string>Welcome,</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="update_button">
+    <property name="geometry">
+     <rect>
+      <x>139</x>
+      <y>640</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string>Click here to update the record.</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>  Update</string>
+    </property>
+    <property name="shortcut">
+     <string>Ctrl+U</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>41</x>
+      <y>225</y>
+      <width>321</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="buyer_or_seller_group">
+     <item>
+      <widget class="QRadioButton" name="select_buyer_btn">
+       <property name="font">
+        <font>
+         <family>Lato</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>Select me if you are dealing with a buyer.</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>STUDENT</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="select_seller_btn">
+       <property name="font">
+        <font>
+         <family>Lato</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>Select me if you are dealing with a seller.</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>ADMIN</string>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="pool">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>10</y>
+      <width>90</width>
+      <height>90</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="log_main">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>10</y>
+      <width>90</width>
+      <height>90</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QFrame" name="frame_2">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>0</y>
+     <width>1081</width>
+     <height>671</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#frame_2{
+	background-color: #E8EEF1;
+	border-radius: 0;
+	background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0#fdfbfb, stop:1 #ebedee);
+}
+
+#transaction_details{
+	font-size: 20px;
+	font-weight: bold;
+	color: #374957;
+	background-color: transparent;
+}
+
+#History, #signout_button{
+	border-radius: 8px;
+	font-weight: bold;
+	font-size: 17px;
+	padding: 8px;
+	background-color: #32D736;
+}
+
+#History
+{
+	border: 2px solid #32D736;
+	border-radius: 8px;
+	
+	background-color: transparent;
+	color: #32D736
+}
+
+#History :hover{
+	background-color: #f77062;
+	color: #fff;
+}
+
+#signout_button{
+	border: 2px solid #f77062;
+	border-radius: 8px;
+	background-color: transparent;
+	color: #f77062;
+}
+
+#signout_button:hover{
+	background-color: #f77062;
+	color: #fff;
+}
+
+#show_graph_btn:hover, #export_csv_btn:hover {
+	background-color: #34E038;
+}
+
+#display_area{
+	background-color: transparent;
+	border: 1px solid #374957;
+	color: #374957;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="transaction_details">
+    <property name="geometry">
+     <rect>
+      <x>-40</x>
+      <y>20</y>
+      <width>961</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+	font size: 50px;
+}</string>
+    </property>
+    <property name="text">
+     <string>TICKETING SYSTEM</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QTableView" name="display_area">
+    <property name="geometry">
+     <rect>
+      <x>23</x>
+      <y>72</y>
+      <width>1011</width>
+      <height>571</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>You can purchase Coupons from here!</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="signout_button">
+    <property name="geometry">
+     <rect>
+      <x>920</x>
+      <y>20</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string>Click here to logout from the system.</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>  Logout</string>
+    </property>
+    <property name="shortcut">
+     <string>Ctrl+Alt+L</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="History">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>20</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string>Click here to have a quick look with graphs.</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>HISTORY</string>
+    </property>
+    <property name="shortcut">
+     <string>Ctrl+G</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_icons">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>240</y>
+      <width>221</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="swimming">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>240</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#swimming{
+border: 2px solid  #88B2CC;
+	border-radius: 8px;
+	background-color: #88B2CC;
+	font-weight: bold;
+	font-size: 17px;
+	color: #fff;
+	padding: 8px;
+}
+
+#swimming:hover{
+	background-color: #96c4e0;
+	border-color: #96c4e0;
+
+}
+
+</string>
+    </property>
+    <property name="text">
+     <string>Swimming</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="swimming_icon">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>90</y>
+      <width>141</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="History_2">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>30</y>
+      <width>29</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="tube_icon">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>90</y>
+      <width>141</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="tube">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>240</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#tube
+{
+border: 2px solid  #88B2CC;
+	border-radius: 8px;
+	background-color: #88B2CC;
+	font-weight: bold;
+	font-size: 17px;
+	color: #fff;
+	padding: 8px;
+}
+
+#tube:hover{
+	background-color: #96c4e0;
+	border-color: #96c4e0;
+
+}</string>
+    </property>
+    <property name="text">
+     <string>Tube</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>signout_button</sender>
+   <signal>clicked()</signal>
+   <receiver>homepage</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1316</x>
+     <y>38</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1601</x>
+     <y>75</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>swimming</sender>
+   <signal>clicked()</signal>
+   <receiver>Quantity</receiver>
+   <slot>stepUp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>550</x>
+     <y>257</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>727</x>
+     <y>642</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
